@@ -91,35 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Save recording
-    // if (saveButton) {
-    //     document.getElementById('recordingForm').addEventListener('submit', async (e) => {
-    //         e.preventDefault();
-
-    //         const formData = new FormData();
-    //         formData.append('audio', new Blob(audioChunks, { type: 'audio/wav' }), 'recording.wav');
-    //         formData.append('course_id', courseSelect.value);
-    //         formData.append('chapter', document.getElementById('chapter').value);
-    //         formData.append('name', document.getElementById('name').value);
-
-    //         try {
-    //             const response = await fetch('/api/save-recording', {
-    //                 method: 'POST',
-    //                 body: formData
-    //             });
-
-    //             const data = await response.json();
-    //             if (data.success) {
-    //                 window.location.href = `/lecture/${data.lecture_id}`;
-    //             } else {
-    //                 alert('Error saving recording: ' + (data.error || 'Unknown error'));
-    //             }
-    //         } catch (err) {
-    //             console.error('Error saving recording:', err);
-    //             alert('Error saving recording. Please try again.');
-    //         }
-    //     });
-    // }
 
     if (saveButton) {
         document.getElementById('recordingForm').addEventListener('submit', async (e) => {
