@@ -24,7 +24,8 @@ This project is a **Lecture Recording and Transcription App** that allows users 
    - Extract the contents and place them in the `model/` folder in the root of the project.
 
 ### **Installing FFmpeg**
-(required for WebM and other format conversion))
+FFmpeg for Conversion: The project uses FFmpeg to convert the WebM file to WAV. This is much more reliable for handling various audio codecs that might be inside the WebM container.
+
 #### On **Windows**:
 1. Download FFmpeg from the official site: [FFmpeg Download Page](https://ffmpeg.org/download.html).
 2. Extract the contents of the zip file.
@@ -108,7 +109,7 @@ Here are images for the different interfaces:
 
 
 ## **License**
-This project is licensed under the MIT License.
+This project is licensed under the **Apache License 2.0**. See the `LICENSE` file for more details.
 
 ---
 
