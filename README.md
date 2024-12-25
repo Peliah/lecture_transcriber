@@ -1,8 +1,6 @@
 
 ---
 
-### **README.md**
-
 # Lecture Recording and Transcription App
 
 This project is a **Lecture Recording and Transcription App** that allows users to record or upload audio lectures, assign them to courses and classes, and generate transcriptions using the **Vosk Speech Recognition** engine. The app also includes a feature to read and listen to transcriptions simultaneously.
@@ -26,7 +24,7 @@ This project is a **Lecture Recording and Transcription App** that allows users 
    - Extract the contents and place them in the `model/` folder in the root of the project.
 
 ### **Installing FFmpeg**
-
+(required for WebM and other format conversion))
 #### On **Windows**:
 1. Download FFmpeg from the official site: [FFmpeg Download Page](https://ffmpeg.org/download.html).
 2. Extract the contents of the zip file.
