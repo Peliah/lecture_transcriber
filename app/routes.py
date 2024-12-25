@@ -44,48 +44,6 @@ def get_courses(class_id):
     courses = Course.query.filter_by(class_id=class_id).all()
     return jsonify([{'id': c.id, 'name': c.name} for c in courses])
 
-# @bp.route('/api/save-recording', methods=['POST'])
-# def save_recording():
-#     if 'audio' not in request.files:
-#         return jsonify({'error': 'No audio file'}), 400
-    
-#     audio_file = request.files['audio']
-#     course_id = request.form.get('course_id')
-#     chapter = request.form.get('chapter')
-#     name = request.form.get('name')
-    
-#     if not all([audio_file, course_id, chapter, name]):
-#         return jsonify({'error': 'Missing required fields'}), 400
-
-#     # Save audio file
-#     filename = f"{uuid.uuid4()}.wav"
-#     audio_path = os.path.join(current_app.config['UPLOAD_FOLDER'], 'audio', filename)
-#     audio_file.save(audio_path)
-    
-#     # Generate transcription
-#     trans_filename = f"{filename.rsplit('.', 1)[0]}.md"
-#     trans_path = os.path.join(current_app.config['UPLOAD_FOLDER'], 'transcriptions', trans_filename)
-    
-#     try:
-#         transcriber.transcribe_file(audio_path, trans_path)
-        
-#         # Create lecture record
-#         lecture = Lecture(
-#             name=name,
-#             chapter=chapter,
-#             date=datetime.utcnow().date(),
-#             audio_path=audio_path,
-#             transcription_path=trans_path,
-#             course_id=course_id,
-#             transcription_status='completed'
-#         )
-#         db.session.add(lecture)
-#         db.session.commit()
-        
-#         return jsonify({'success': True, 'lecture_id': lecture.id})
-#     except Exception as e:
-#         return jsonify({'error': str(e)}), 500
-
 def convert_to_wav_ffmpeg(input_path, output_path):
     try:
         command = ['ffmpeg', '-y', '-i', input_path, output_path]  # -y overwrites existing files
